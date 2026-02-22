@@ -473,3 +473,14 @@ document.querySelector("button").addEventListener("click", function() {
 8. Funções
 9. Métodos de array
 10. DOM
+11. Módulos em Node.js:
+
+# 11. Módulos em Node.js:
+--Importação de módulos (require, CommomJS)
+No terminal digite: npm install inquirer.
+Crie um arquivo com o título .gitignore e dentro escreva: node_modules/
+Prompt: 
+ 
+ const { select } = require('@inquirer/prompts')
+
+ --Biblioteca 'inquirer' para criar prompts interativos

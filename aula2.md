@@ -228,6 +228,16 @@ while (i < 5) {
   i++
 }
 ```
+const start = () => {
+    let count = 0
+    while(count < 10){
+        console.log(count)
+        count = count + 1
+    }
+}
+
+start()
+
 
 ## do while
 

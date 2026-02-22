@@ -2,6 +2,26 @@
 
 ---
 
+# 📚 ÍNDICE
+
+1. [Como um Programa Funciona](#1-como-um-programa-funciona)
+2. [Variáveis](#2-variáveis)
+3. [Escopo](#3-escopo)
+4. [Tipos de Dados](#4-tipos-de-dados)
+5. [Operadores](#5-operadores)
+6. [Condicionais](#6-condicionais)
+7. [Estruturas de Repetição](#7-estruturas-de-repetição)
+8. [Funções](#8-funções)
+9. [Arrays](#9-arrays)
+10. [Objetos](#10-objetos)
+11. [Métodos de Array (Intermediário)](#11-métodos-de-array-intermediário)
+12. [JSON](#12-json)
+13. [Manipulação do DOM (Front-End)](#13-manipulação-do-dom-front-end)
+14. [Node.js e Módulos](#14-nodejs-e-módulos)
+15. [Programação Assíncrona](#15-programação-assíncrona)
+
+---
+
 # 1. COMO UM PROGRAMA FUNCIONA
 
 Todo programa segue 3 etapas:
@@ -9,8 +29,6 @@ Todo programa segue 3 etapas:
 1. Entrada de dados (input)
 2. Processamento
 3. Saída de dados (output)
-
-Exemplo:
 
 ```js
 let numero = 5
@@ -22,15 +40,11 @@ console.log(resultado)
 
 # 2. VARIÁVEIS
 
-## O que é?
-
 Espaço na memória que guarda um valor.
 
-## Declaração
-
-- let → pode alterar o valor
-- const → não pode reatribuir
-- var → antigo (evite)
+- `let` → pode alterar valor
+- `const` → não pode reatribuir
+- `var` → antigo (evite)
 
 ```js
 let nome = "Ana"
@@ -79,88 +93,45 @@ let nada
 let vazio = null
 ```
 
-### Strings
-
-Podem usar:
-
-```js
-"texto"
-'texto'
-`texto`
-```
-
-Template string:
+## Template String
 
 ```js
 let nome = "Tai"
 let frase = `Olá, ${nome}`
 ```
 
----
-
-# 5. TYPEOF
-
-Descobre o tipo:
+## typeof
 
 ```js
-typeof "Hello"  // string
-typeof 10       // number
-typeof true     // boolean
+typeof "Hello"
+typeof 10
+typeof true
 ```
 
 ---
 
-# 6. OPERADORES
+# 5. OPERADORES
 
-## 6.1 Atribuição
+## Matemáticos
 
-```js
-let x = 10
-```
-
-## 6.2 Matemáticos
-
-+  soma  
--  subtração  
-*  multiplicação  
-/  divisão  
-%  resto  
-** potência  
++ - * / % **
 
 ```js
-2 ** 3 // 8
+2 ** 3
 ```
 
-## 6.3 Incremento
+## Comparação
 
-```js
-let x = 1
-x++
-x--
-```
+==  ===  !=  !==  >  <  >=  <=  
+Prefira `===`.
 
-## 6.4 Comparação
+## Lógicos
 
-==   igual (fraco)  
-===  igual (estrito)  
-!=   diferente  
-!==  diferente estrito  
->    maior  
-<    menor  
->=   maior ou igual  
-<=   menor ou igual  
-
-Sempre prefira `===`.
-
-## 6.5 Lógicos
-
-&&  (e)  
-||  (ou)  
-!   (negação)  
+&&  ||  !
 
 ---
 
-# 7. CONDICIONAIS
+# 6. CONDICIONAIS
 
 ## if / else
 
@@ -186,7 +157,7 @@ if (nota >= 9) {
 }
 ```
 
-## Operador ternário
+## Operador Ternário
 
 ```js
 let resultado = idade >= 18 ? "Maior" : "Menor"
@@ -206,29 +177,9 @@ switch (cor) {
 }
 ```
 
-
-const start = () => {
-
-    while(true){
-       let opcao = "sair"
-        switch(opcao) {
-            case "cadastrar":
-                console.log("vamos cadastrar")
-                break
-            case "listar":
-                console.log("vamos listar")
-                break
-            case "sair":
-                return
-        }
-    }
-}
-
-
-start()
 ---
 
-# 8. ESTRUTURAS DE REPETIÇÃO
+# 7. ESTRUTURAS DE REPETIÇÃO
 
 ## for
 
@@ -241,23 +192,13 @@ for (let i = 0; i < 5; i++) {
 ## while
 
 ```js
-let i = 0
+let count = 0
 
-while (i < 5) {
-  console.log(i)
-  i++
+while (count < 10) {
+  console.log(count)
+  count++
 }
 ```
-const start = () => {
-    let count = 0
-    while(count < 10){
-        console.log(count)
-        count = count + 1
-    }
-}
-
-start()
-
 
 ## do while
 
@@ -272,97 +213,7 @@ do {
 
 ---
 
-# 9. ARRAYS
-
-Lista ordenada.
-
-```js
-let nomes = ["Ana", "Carlos", "João"]
-```
-
-## Acesso
-
-```js
-nomes[0]
-```
-
-## Propriedades
-
-```js
-nomes.length
-```
-
-## Métodos principais
-
-```js
-nomes.push("Maria")     // adiciona no final
-nomes.pop()             // remove do final
-nomes.shift()           // remove do início
-nomes.unshift("Pedro")  // adiciona no início
-```
-
-## Loop em array
-
-```js
-for (let i = 0; i < nomes.length; i++) {
-  console.log(nomes[i])
-}
-```
-
-## forEach
-
-```js
-nomes.forEach(function(nome) {
-  console.log(nome)
-})
-```
-
----
-
-# 10. OBJETOS
-
-Coleção de chave:valor
-
-```js
-let pessoa = {
-  nome: "Tai",
-  idade: 30,
-  ativo: true
-}
-```
-
-## Acesso
-
-```js
-pessoa.nome
-pessoa["idade"]
-```
-
-## Alteração
-
-```js
-pessoa.idade = 31
-```
-
-## Adicionar propriedade
-
-```js
-pessoa.profissao = "Professora"
-```
-
-## Loop em objeto
-
-```js
-for (let chave in pessoa) {
-  console.log(chave, pessoa[chave])
-}
-```
-
----
-
-# 11. FUNÇÕES
-
-Bloco reutilizável.
+# 8. FUNÇÕES
 
 ## Declaração tradicional
 
@@ -388,11 +239,61 @@ const mensagem = function() {
 
 ---
 
-# 12. MÉTODOS IMPORTANTES DE ARRAY (NÍVEL INTERMEDIÁRIO)
+# 9. ARRAYS
+
+```js
+let nomes = ["Ana", "Carlos", "João"]
+```
+
+## Métodos principais
+
+```js
+nomes.push("Maria")
+nomes.pop()
+nomes.shift()
+nomes.unshift("Pedro")
+```
+
+## Loop em array
+
+```js
+for (let i = 0; i < nomes.length; i++) {
+  console.log(nomes[i])
+}
+```
+
+---
+
+# 10. OBJETOS
+
+```js
+let pessoa = {
+  nome: "Tai",
+  idade: 30,
+  ativo: true
+}
+```
+
+## Acesso
+
+```js
+pessoa.nome
+pessoa["idade"]
+```
+
+## Loop
+
+```js
+for (let chave in pessoa) {
+  console.log(chave, pessoa[chave])
+}
+```
+
+---
+
+# 11. MÉTODOS DE ARRAY (INTERMEDIÁRIO)
 
 ## map
-
-Transforma cada item.
 
 ```js
 let numeros = [1, 2, 3]
@@ -401,15 +302,11 @@ let dobrados = numeros.map(n => n * 2)
 
 ## filter
 
-Filtra elementos.
-
 ```js
 let maiores = numeros.filter(n => n > 1)
 ```
 
 ## find
-
-Retorna o primeiro que satisfaz condição.
 
 ```js
 numeros.find(n => n === 2)
@@ -417,70 +314,98 @@ numeros.find(n => n === 2)
 
 ---
 
-# 13. JSON
-
-Formato de dados.
+# 12. JSON
 
 ```js
-let pessoa = {
-  "nome": "Tai",
-  "idade": 30
-}
-```
-
-Converter:
-
-```js
-JSON.stringify(pessoa)
-JSON.parse('{"nome":"Tai"}')
+JSON.stringify(objeto)
+JSON.parse(stringJSON)
 ```
 
 ---
 
-# 14. MANIPULAÇÃO BÁSICA DO DOM (FRONT-END)
+# 13. MANIPULAÇÃO DO DOM (FRONT-END)
 
-Selecionar elemento:
+## Selecionar elemento
 
 ```js
 document.querySelector("h1")
 ```
 
-Alterar texto:
+## Alterar texto
 
 ```js
 document.querySelector("h1").textContent = "Novo título"
 ```
 
-Evento:
+## Evento
 
 ```js
-document.querySelector("button").addEventListener("click", function() {
-  console.log("Clicou")
-})
+document.querySelector("button")
+  .addEventListener("click", function() {
+    console.log("Clicou")
+  })
 ```
 
 ---
 
-# 15. ORDEM IDEAL DE ESTUDO
+# 14. NODE.JS E MÓDULOS
 
-1. Variáveis
-2. Tipos
-3. Operadores
-4. Condicionais
-5. Loops
-6. Arrays
-7. Objetos
-8. Funções
-9. Métodos de array
-10. DOM
-11. Módulos em Node.js:
+## Instalar dependência
 
-# 11. Módulos em Node.js:
---Importação de módulos (require, CommomJS)
-No terminal digite: npm install inquirer.
-Crie um arquivo com o título .gitignore e dentro escreva: node_modules/
-Prompt: 
- 
- const { select } = require('@inquirer/prompts')
+```
+npm init -y
+npm install @inquirer/prompts
+```
 
- --Biblioteca 'inquirer' para criar prompts interativos
+Criar `.gitignore`:
+
+```
+node_modules/
+```
+
+## Importação (CommonJS)
+
+```js
+const { select } = require('@inquirer/prompts')
+```
+
+---
+
+# 15. PROGRAMAÇÃO ASSÍNCRONA
+
+## async / await
+
+```js
+const { select } = require('@inquirer/prompts')
+
+const start = async () => {
+
+  while (true) {
+
+    const opcao = await select({
+      message: "Menu >",
+      choices: [
+        { name: "Cadastrar meta", value: "cadastrar" },
+        { name: "Listar metas", value: "listar" },
+        { name: "Sair", value: "sair" }
+      ]
+    })
+
+    switch (opcao) {
+      case "cadastrar":
+        console.log("vamos cadastrar")
+        break
+      case "listar":
+        console.log("vamos listar")
+        break
+      case "sair":
+        console.log("Até a próxima!")
+        return
+    }
+  }
+}
+
+start()
+```
+
+---

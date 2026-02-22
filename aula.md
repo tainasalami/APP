@@ -23,3 +23,26 @@ number: 2 1.4
 
 # Operadores
 Operador de atribuição de valor =
+
+// hello World
+let mensagem1 = "Hello World"
+mensagem1 = 2
+console.log(mensagem1);
+
+const mensagem2 = "How are you?"
+console.log(mensagem2);
+
+## Operadore de contatenação: junção de duas ou mais str (strings)
+// arrays, objetos
+let metas = ["mayk", "alo"] 
+
+console.log(metas[1] + ", " + metas[0]) 
+
+## Estruturas de dados:
+## Arrays:
+Uma lista que contém qualquer tipo de dado
+
+## Objetos:
+Atributos e métodos
+Criação e manipulação de objetos
+Acesso a propriedade de objetos
